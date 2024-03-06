@@ -8,7 +8,7 @@
   body {
       margin: 0;
       overflow: hidden;
-      background-image: url('./backgroundImg.jpg'); /* Specify the path to your background image */
+      background-image: url('./backgroundImg.jpg'); 
       background-size: cover;
       background-position: center;
     }
@@ -54,9 +54,8 @@
       function submitHandler(){
  console.log('Click');
  const FileInput=document.getElementById('formFile');
-//  console.log(FileInput.files);
 if (!FileInput.files[0]) {
-  alert('Please select a file');
+  alert('Please select an image');
   return;
 }
  const image=FileInput.files[0];
@@ -80,7 +79,7 @@ formData.append('size','auto');
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
-        // console.log('The array buffer is '+response.arrayBuffer());
+
         return response.arrayBuffer();
       })
       .then(data => {
@@ -103,9 +102,6 @@ formData.append('size','auto');
         document.body.removeChild(anchorElement);
       div.innerHTML = ``;
       }
-
-    
-    
     </script>
   </body>
 </html>
